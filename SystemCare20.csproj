@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <!-- WinForms is used only for the system tray NotifyIcon -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>AxioraSystemCare</AssemblyName>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <RootNamespace>SystemCare20</RootNamespace>
+    <Product>Axiora SystemCare</Product>
+    <Company>Axiora</Company>
+    <AssemblyTitle>Axiora SystemCare</AssemblyTitle>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\logo-mark.png" />
+    <Resource Include="Assets\logo-full.png" />
+    <Resource Include="Assets\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Avoid WPF/WinForms type-name clashes (Application, Button, MessageBox...) -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+</Project>
